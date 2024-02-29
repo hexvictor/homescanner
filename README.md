@@ -6,6 +6,7 @@ HomeScanner is a Next.js 14 application that provides an intuitive platform for 
 
 - Next.js 14
 - React
+- Typescript
 - Tailwind CSS
 - MongoDB
 - Mongoose
