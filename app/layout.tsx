@@ -1,22 +1,26 @@
-import React, { ReactNode } from 'react'
+import React from 'react';
 import '@/assets/styles/global.css';
 import { LayoutProps } from '@/types/global';
- 
+import Navbar from '@/components/Navbar/Navbar';
+import { Providers } from '@/lib/Providers';
 
 export const metadata = {
   title: 'HomeScanner | Find your next home',
   description: 'Find your next home with HomeScanner. We have the best properties in the city.',
-  keywords: 'home, house, property, rent, buy, city, home scanner'
-}
+  keywords: 'home, house, property, rent, buy, city, home scanner',
+};
 
-const Layout = ({children}:LayoutProps) => {
+function Layout({ children }: LayoutProps) {
   return (
-    <html lang='en'>
+    <Providers>
+      <html lang="en">
         <body>
-            <div>{children}</div>
+          <Navbar />
+          <main>{children}</main>
         </body>
-    </html>
-  )
+      </html>
+    </Providers>
+  );
 }
 
-export default Layout
+export default Layout;
