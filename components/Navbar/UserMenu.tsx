@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
-import ProfileMenu from './ProfileMenu';
-import profileDefault from '@/assets/images/profile.png';
-import { FaGoogle } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import ProfileMenu from "./ProfileMenu";
+import profileDefault from "@/assets/images/profile.png";
+import { FaGoogle } from "react-icons/fa";
 import {
   authSlice,
   navbarSlice,
@@ -11,9 +11,9 @@ import {
   selectProfileMenuState,
   useDispatch,
   useSelector,
-} from '@/lib/redux';
+} from "@/lib/redux";
 
-const UserMenu = () => {
+const UserMenu = (): JSX.Element => {
   const loggedIn = useSelector(selectAuthSuccess);
   if (loggedIn) {
     return <UserMenuLoggedIn />;
@@ -22,7 +22,7 @@ const UserMenu = () => {
   }
 };
 
-const UserMenuLoggedIn = () => {
+const UserMenuLoggedIn = (): JSX.Element => {
   const dispatch = useDispatch();
   const profileMenuState = useSelector(selectProfileMenuState);
   return (
@@ -66,7 +66,11 @@ const UserMenuLoggedIn = () => {
           >
             <span className="absolute -inset-1.5" />
             <span className="sr-only">Open user menu</span>
-            <Image className="h-8 w-8 rounded-full" src={profileDefault} alt="" />
+            <Image
+              className="h-8 w-8 rounded-full"
+              src={profileDefault}
+              alt=""
+            />
           </button>
         </div>
 
@@ -77,7 +81,7 @@ const UserMenuLoggedIn = () => {
   );
 };
 
-const UserMenuLoggedOut = () => {
+const UserMenuLoggedOut = (): JSX.Element => {
   const dispatch = useDispatch();
   return (
     <div className="hidden md:block md:ml-6">

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function AddPropertyPage() {
+function AddPropertyPage(): React.ReactElement {
   return <div>AddPropertyPage</div>;
 }
 

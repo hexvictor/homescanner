@@ -1,14 +1,20 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import logo from '@/assets/images/logo-white.png';
-import MobileNavbarMenu from './mobile/MobileNavbarMenu';
-import UserMenu from './UserMenu';
-import { usePathname } from 'next/navigation';
-import { navbarSlice, selectAuthSuccess, selectMobileMenuState, useDispatch, useSelector } from '@/lib/redux';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import logo from "@/assets/images/logo-white.png";
+import MobileNavbarMenu from "./mobile/MobileNavbarMenu";
+import UserMenu from "./UserMenu";
+import { usePathname } from "next/navigation";
+import {
+  navbarSlice,
+  selectAuthSuccess,
+  selectMobileMenuState,
+  useDispatch,
+  useSelector,
+} from "@/lib/redux";
 
-function Navbar() {
+function Navbar(): JSX.Element {
   const dispatch = useDispatch();
   const mobileMenuState = useSelector(selectMobileMenuState);
   const loggedIn = useSelector(selectAuthSuccess);
@@ -38,7 +44,11 @@ function Navbar() {
                 stroke="currentColor"
                 aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
               </svg>
             </button>
           </div>
@@ -48,7 +58,9 @@ function Navbar() {
             <Link className="flex flex-shrink-0 items-center" href="/">
               <Image className="h-10 w-auto" src={logo} alt="HomeScanner" />
 
-              <span className="hidden md:block text-white text-2xl font-bold ml-2">HomeScanner</span>
+              <span className="hidden md:block text-white text-2xl font-bold ml-2">
+                HomeScanner
+              </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
             <div className="hidden md:ml-6 md:block">
@@ -56,7 +68,7 @@ function Navbar() {
                 <Link
                   href="/"
                   className={`${
-                    pathname === '/' ? 'bg-black text-white' : 'text-gray-300'
+                    pathname === "/" ? "bg-black text-white" : "text-gray-300"
                   } hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
                 >
                   Home
@@ -64,7 +76,9 @@ function Navbar() {
                 <Link
                   href="/properties"
                   className={`${
-                    pathname === '/properties' ? 'bg-black text-white' : 'text-gray-300'
+                    pathname === "/properties"
+                      ? "bg-black text-white"
+                      : "text-gray-300"
                   } hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
                 >
                   Properties
@@ -73,7 +87,9 @@ function Navbar() {
                   <Link
                     href="/properties/add"
                     className={`${
-                      pathname === '/properties/add' ? 'bg-black text-white' : 'text-gray-300'
+                      pathname === "/properties/add"
+                        ? "bg-black text-white"
+                        : "text-gray-300"
                     } hover:bg-gray-900 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
                   >
                     Add Property

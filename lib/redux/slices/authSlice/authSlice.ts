@@ -2,13 +2,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { log } from "console";
 
-
 const initialState: AuthSliceState = {
-  loading: false, 
+  loading: false,
   user: null,
   token: null,
   error: null,
-  success: false
+  success: false,
 };
 export const authSlice = createSlice({
   name: "auth",
@@ -17,12 +16,12 @@ export const authSlice = createSlice({
     // Successfully log in user
     signIn: (state) => {
       state.loading = false;
-      state.user = {id: '1', email: 'email@email.com', name: 'name'};
-      state.token = 'token';
+      state.user = { id: "1", email: "email@email.com", name: "name" };
+      state.token = "token";
       state.error = null;
       state.success = true;
     },
-     // Log off user from the app
+    // Log off user from the app
     signOut: (state) => {
       state.loading = false;
       state.user = null;
@@ -36,8 +35,8 @@ export const authSlice = createSlice({
       state.token = null;
       state.error = action.payload;
       state.success = false;
-    }
-  }
+    },
+  },
 });
 
 /* Types */

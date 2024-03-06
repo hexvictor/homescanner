@@ -1,8 +1,0 @@
-
-interface UserMenuProps {
-   
-}
-
-interface MobileNavbarMenuProps {
-    
-}

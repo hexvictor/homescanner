@@ -1,6 +1,6 @@
 # HomeScanner
 
-HomeScanner is a Next.js 14 application that provides an intuitive platform for home scanning. 
+HomeScanner is a Next.js 14 application that provides an intuitive platform for home scanning.
 
 ## Technologies Used
 
