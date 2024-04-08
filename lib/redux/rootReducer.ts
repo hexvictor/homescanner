@@ -1,7 +1,5 @@
 /* Instruments */
-import { counterSlice } from "./slices";
-import { navbarSlice } from "./slices";
-import { authSlice } from "./slices";
+import { counterSlice, navbarSlice, authSlice } from "./slices";
 
 export const reducer = {
   counter: counterSlice.reducer,

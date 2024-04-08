@@ -3,8 +3,6 @@ import Hero from "@/components/Hero/Hero";
 import { InfoBox } from "@/components/InfoBox";
 
 function HomePage(): React.ReactElement {
-  console.log("e");
-
   return (
     <>
       <Hero />

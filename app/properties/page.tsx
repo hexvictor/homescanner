@@ -1,12 +1,14 @@
-import Link from "next/link";
+import { PropertiesList } from "@/components/PropertiesList";
+import json from "@/properties.json";
 import React from "react";
 
 function PropertiesPage(): React.ReactElement {
   return (
-    <div>
-      <h1 className="text-3xl">Properties</h1>
-      <Link href="/">Go Home</Link>
-    </div>
+    <section className="px-4 py-6">
+      <div className="container-xl lg:container m-auto px-4 py-6">
+        <PropertiesList properties={json} />
+      </div>
+    </section>
   );
 }
 
