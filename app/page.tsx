@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero/Hero";
 import { InfoBox } from "@/components/InfoBox";
+import { HomeProperties } from "@/components/HomeProperties";
 
 function HomePage(): React.ReactElement {
   return (
@@ -38,6 +39,7 @@ function HomePage(): React.ReactElement {
               airbnb or long term.{" "}
             </InfoBox>
           </div>
+          <HomeProperties />
         </div>
       </section>
     </>
