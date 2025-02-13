@@ -1,5 +1,5 @@
 import properties from "@/properties.json";
-import PropertyCard from "../PropertiesList/PropertyCard";
+import PropertyCard from "../../PropertiesList/PropertyCard";
 import Link from "next/link";
 
 const HomeProperties = () => {
