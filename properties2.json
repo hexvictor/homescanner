@@ -145,12 +145,7 @@
     "beds": 1,
     "baths": 1,
     "square_feet": 900,
-    "amenities": [
-      "Fireplace",
-      "Outdoor Grill/BBQ",
-      "Balcony/Patio",
-      "Coffee Maker"
-    ],
+    "amenities": ["Fireplace", "Outdoor Grill/BBQ", "Balcony/Patio", "Coffee Maker"],
     "rates": {
       "weekly": 2000
     },
@@ -178,13 +173,7 @@
     "beds": 1,
     "baths": 1,
     "square_feet": 900,
-    "amenities": [
-      "High-Speed Internet",
-      "Smart TV",
-      "Air Conditioning",
-      "Gym/Fitness Center",
-      "Outdoor Grill/BBQ"
-    ],
+    "amenities": ["High-Speed Internet", "Smart TV", "Air Conditioning", "Gym/Fitness Center", "Outdoor Grill/BBQ"],
     "rates": {
       "weekly": 1100,
       "monthly": 4200
@@ -213,13 +202,7 @@
     "beds": 4,
     "baths": 3,
     "square_feet": 2800,
-    "amenities": [
-      "Beach Access",
-      "Swimming Pool",
-      "Balcony/Patio",
-      "Smart TV",
-      "Outdoor Grill/BBQ"
-    ],
+    "amenities": ["Beach Access", "Swimming Pool", "Balcony/Patio", "Smart TV", "Outdoor Grill/BBQ"],
     "rates": {
       "nightly": 500,
       "weekly": 2500
@@ -248,12 +231,7 @@
     "beds": 2,
     "baths": 1,
     "square_feet": 1100,
-    "amenities": [
-      "Fireplace",
-      "Outdoor Grill/BBQ",
-      "Hiking Trails Access",
-      "Pet-Friendly"
-    ],
+    "amenities": ["Fireplace", "Outdoor Grill/BBQ", "Hiking Trails Access", "Pet-Friendly"],
     "rates": {
       "nightly": 475,
       "weekly": 2000
@@ -282,12 +260,7 @@
     "beds": 3,
     "baths": 2,
     "square_feet": 1800,
-    "amenities": [
-      "Ski Equipment Storage",
-      "Fireplace",
-      "Balcony/Patio",
-      "Smart TV"
-    ],
+    "amenities": ["Ski Equipment Storage", "Fireplace", "Balcony/Patio", "Smart TV"],
     "rates": {
       "nightly": 300,
       "weekly": 1100
@@ -316,13 +289,7 @@
     "beds": 4,
     "baths": 3,
     "square_feet": 2400,
-    "amenities": [
-      "Mountain View",
-      "Hiking Trails Access",
-      "Air Conditioning",
-      "Smart TV",
-      "Outdoor Grill/BBQ"
-    ],
+    "amenities": ["Mountain View", "Hiking Trails Access", "Air Conditioning", "Smart TV", "Outdoor Grill/BBQ"],
     "rates": {
       "weekly": 1000,
       "monthly": 3800
@@ -351,12 +318,7 @@
     "beds": 2,
     "baths": 1,
     "square_feet": 1200,
-    "amenities": [
-      "High-Speed Internet",
-      "Air Conditioning",
-      "Smart TV",
-      "Coffee Maker"
-    ],
+    "amenities": ["High-Speed Internet", "Air Conditioning", "Smart TV", "Coffee Maker"],
     "rates": {
       "weekly": 550,
       "monthly": 2100

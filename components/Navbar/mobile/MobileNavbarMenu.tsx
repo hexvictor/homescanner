@@ -1,13 +1,8 @@
-import {
-  authSlice,
-  selectAuthSuccess,
-  useDispatch,
-  useSelector,
-} from "@/lib/redux";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
-import { FaGoogle } from "react-icons/fa";
+import {authSlice, selectAuthSuccess, useDispatch, useSelector} from '@/lib/redux';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+import React from 'react';
+import {FaGoogle} from 'react-icons/fa';
 
 const MobileNavbarMenu = () => {
   const dispatch = useDispatch();
@@ -19,7 +14,7 @@ const MobileNavbarMenu = () => {
         <Link
           href="/"
           className={`${
-            pathname === "/" ? "bg-black text-white" : "text-gray-300"
+            pathname === '/' ? 'bg-black text-white' : 'text-gray-300'
           } hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
         >
           Home
@@ -27,7 +22,7 @@ const MobileNavbarMenu = () => {
         <Link
           href="/properties"
           className={`${
-            pathname === "/properties" ? "bg-black text-white" : "text-gray-300"
+            pathname === '/properties' ? 'bg-black text-white' : 'text-gray-300'
           } hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
         >
           Properties
@@ -36,9 +31,7 @@ const MobileNavbarMenu = () => {
           <Link
             href="/properties/add"
             className={`${
-              pathname === "/properties/add"
-                ? "bg-black text-white"
-                : "text-gray-300"
+              pathname === '/properties/add' ? 'bg-black text-white' : 'text-gray-300'
             } hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
           >
             Add Property

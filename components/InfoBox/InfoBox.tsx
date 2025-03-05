@@ -1,13 +1,7 @@
-import React from "react";
-import { type InfoBoxProps } from "./types";
+import React from 'react';
+import {type InfoBoxProps} from './types';
 
-const InfoBox = ({
-  backgroundColor,
-  buttonInfo,
-  children,
-  heading,
-  textColor,
-}: InfoBoxProps): JSX.Element => {
+const InfoBox = ({backgroundColor, buttonInfo, children, heading, textColor}: InfoBoxProps): JSX.Element => {
   return (
     <div className={`${backgroundColor} p-6 rounded-lg shadow-md`}>
       <h2 className={`${textColor} text-2xl font-bold`}>{heading}</h2>

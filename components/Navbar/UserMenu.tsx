@@ -1,17 +1,10 @@
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import ProfileMenu from "./ProfileMenu";
-import profileDefault from "@/assets/images/profile.png";
-import { FaGoogle } from "react-icons/fa";
-import {
-  authSlice,
-  navbarSlice,
-  selectAuthSuccess,
-  selectProfileMenuState,
-  useDispatch,
-  useSelector,
-} from "@/lib/redux";
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
+import ProfileMenu from './ProfileMenu';
+import profileDefault from '@/assets/images/profile.png';
+import {FaGoogle} from 'react-icons/fa';
+import {authSlice, navbarSlice, selectAuthSuccess, selectProfileMenuState, useDispatch, useSelector} from '@/lib/redux';
 
 const UserMenu = (): JSX.Element => {
   const loggedIn = useSelector(selectAuthSuccess);
@@ -66,11 +59,7 @@ const UserMenuLoggedIn = (): JSX.Element => {
           >
             <span className="absolute -inset-1.5" />
             <span className="sr-only">Open user menu</span>
-            <Image
-              className="h-8 w-8 rounded-full"
-              src={profileDefault}
-              alt=""
-            />
+            <Image className="h-8 w-8 rounded-full" src={profileDefault} alt="" />
           </button>
         </div>
 

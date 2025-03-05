@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import React from 'react';
+import Image from 'next/image';
+import logo from '@/assets/images/logo.png';
 
 const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
@@ -11,9 +11,7 @@ const Footer = (): JSX.Element => {
           <Image src={logo} alt="Logo" className="h-8 w-auto" />
         </div>
         <div>
-          <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            &copy; {currentYear} PropertyPulse. All rights reserved.
-          </p>
+          <p className="text-sm text-gray-500 mt-2 md:mt-0">&copy; {currentYear} PropertyPulse. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import connectDB from "@/config/database";
-import { RecentProperties } from "../layout/RecentProperties";
+import Link from 'next/link';
+import connectDB from '@/config/database';
+import {RecentProperties} from '../RecentProperties';
 
 const HomeProperties = async (): Promise<React.ReactElement> => {
   await connectDB();

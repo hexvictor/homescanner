@@ -1,3 +1,3 @@
-import RecentProperties from "./RecentProperties";
+import RecentProperties from './RecentProperties';
 
-export { RecentProperties };
+export {RecentProperties};

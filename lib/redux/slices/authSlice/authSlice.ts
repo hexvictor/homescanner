@@ -1,6 +1,5 @@
 /* Core */
-import { createSlice } from "@reduxjs/toolkit";
-import { log } from "console";
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState: AuthSliceState = {
   loading: false,
@@ -10,19 +9,19 @@ const initialState: AuthSliceState = {
   success: false,
 };
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   reducers: {
     // Successfully log in user
-    signIn: (state) => {
+    signIn: state => {
       state.loading = false;
-      state.user = { id: "1", email: "email@email.com", name: "name" };
-      state.token = "token";
+      state.user = {id: '1', email: 'email@email.com', name: 'name'};
+      state.token = 'token';
       state.error = null;
       state.success = true;
     },
     // Log off user from the app
-    signOut: (state) => {
+    signOut: state => {
       state.loading = false;
       state.user = null;
       state.token = null;

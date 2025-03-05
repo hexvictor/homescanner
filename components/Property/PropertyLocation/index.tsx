@@ -1,3 +1,3 @@
-import PropertyLocation from "./PropertyLocation";
+import PropertyLocation from './PropertyLocation';
 
-export { PropertyLocation };
+export {PropertyLocation};

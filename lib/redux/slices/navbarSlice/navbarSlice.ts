@@ -1,26 +1,26 @@
 /* Core */
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState: NavbarSliceState = {
   profileMenu: false,
   mobileMenu: false,
 };
 export const navbarSlice = createSlice({
-  name: "navbar",
+  name: 'navbar',
   initialState,
   reducers: {
     // Toggle Profile menu on or off
-    toggleProfileMenu: (state) => {
+    toggleProfileMenu: state => {
       state.profileMenu = !state.profileMenu;
     },
-    openProfileMenu: (state) => {
+    openProfileMenu: state => {
       state.profileMenu = true;
     },
-    closeProfileMenu: (state) => {
+    closeProfileMenu: state => {
       state.profileMenu = false;
     },
     // Toggle Mobile menu on or off
-    toggleMobileMenu: (state) => {
+    toggleMobileMenu: state => {
       state.mobileMenu = !state.mobileMenu;
     },
   },

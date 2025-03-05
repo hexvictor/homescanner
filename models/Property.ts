@@ -1,5 +1,5 @@
-import { Schema, model, models } from "mongoose";
-import type { Types, Document } from "mongoose";
+import {Schema, model, models} from 'mongoose';
+import type {Types, Document} from 'mongoose';
 
 // Interface para a tipagem do documento Property
 export interface IProperty extends Document {
@@ -38,7 +38,7 @@ const PropertySchema = new Schema<IProperty>(
   {
     owner: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
       required: true,
     },
     name: {
@@ -71,7 +71,7 @@ const PropertySchema = new Schema<IProperty>(
       type: Number,
       required: true,
     },
-    amenities: [{ type: String }],
+    amenities: [{type: String}],
     rates: {
       nightly: Number,
       weekly: Number,
@@ -97,6 +97,6 @@ const PropertySchema = new Schema<IProperty>(
   }
 );
 
-const Property = models.Property ?? model("Property", PropertySchema);
+const Property = models.Property ?? model('Property', PropertySchema);
 
 export default Property;

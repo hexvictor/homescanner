@@ -1,2 +1,2 @@
-import HomeProperties from "./HomeProperties";
-export { HomeProperties };
+import HomeProperties from './HomeProperties';
+export {HomeProperties};

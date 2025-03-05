@@ -1,52 +1,58 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo '🏗️👷‍♂️ Styling, testing and building your project before committing'
+echo '🏗️👷‍♂️ Styling, testing, and building your project before committing'
 
-# Check tsconfig standards
-npm run check-types ||
+
+echo '🏗️ Running ESLint and Prettier...'
+
+# Fix ESLint and Prettier formatting
+yarn eslint --fix . || exit 1
+yarn format
+# Check TypeScript standards
+yarn check-types ||
 (
     echo '❌ Failed Type check ❌
     Please fix the type errors before committing.
-    You can use `npm run types` to fix the errors, add the changes and commit again.'
+    You can use `yarn types` to fix the errors, add the changes, and commit again.'
     false;
 )
 
 # Check Prettier standards
-npm run check-format ||
+yarn check-format ||
 (
     echo '❌ Failed Prettier check ❌
     Please fix the prettier errors before committing. 
-    You can use `npm run format` to fix the errors, add the changes and commit again.'
+    You can use `yarn format` to fix the errors, add the changes, and commit again.'
     false;
 )
 
 # Check ESLint standards
-npm run check-lint ||
+yarn check-lint ||
 (
     echo '❌ Failed ESLint check ❌
-    Please fix the eslint errors before committing. 
-    You can use `npm run lint` to fix the errors, add the changes and commit again.'
+    Please fix the ESLint errors before committing. 
+    You can use `yarn lint` to fix the errors, add the changes, and commit again.'
     false;
 )
 
-# Check Jest standards
-npm run test ||
+# Check Jest tests
+yarn test ||
 (
     echo '❌ Failed Jest check ❌
-    Please fix the jest errors before committing. 
-    You can use `npm run test` to fix the errors, add the changes and commit again.'
+    Please fix the Jest errors before committing. 
+    You can use `yarn test` to fix the errors, add the changes, and commit again.'
     false;
 )
 
 # If all checks pass, build the project
-npm run build ||
+yarn build ||
 (
     echo '❌ Failed Build ❌
     Please fix the build errors before committing. 
-    You can use `npm run build` to fix the errors, add the changes and commit again.'
+    You can use `yarn build` to fix the errors, add the changes, and commit again.'
     false;
 )
 
-# If build is successful, commit the changes
+# If the build is successful, commit the changes
 echo '✅ All checks passed. Committing changes...'

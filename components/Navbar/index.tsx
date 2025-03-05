@@ -1,5 +1,5 @@
-import Navbar from "./NavBar";
-import ProfileMenu from "./ProfileMenu";
-import UserMenu from "./UserMenu";
+import Navbar from './Navbar';
+import ProfileMenu from './ProfileMenu';
+import UserMenu from './UserMenu';
 
-export { Navbar, ProfileMenu, UserMenu };
+export {Navbar, ProfileMenu, UserMenu};

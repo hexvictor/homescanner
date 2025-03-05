@@ -1,5 +1,5 @@
 /* Instruments */
-import type { ReduxState } from "@/lib/redux";
+import type {ReduxState} from '@/lib/redux';
 
 export const selectAuthUser = (state: ReduxState) => state.auth.user;
 export const selectAuthLoading = (state: ReduxState) => state.auth.loading;

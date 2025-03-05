@@ -1,3 +1,3 @@
-export * from "./counterSlice";
-export * from "./navbarSlice";
-export * from "./authSlice";
+export * from './counterSlice';
+export * from './navbarSlice';
+export * from './authSlice';

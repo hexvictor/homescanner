@@ -1,12 +1,12 @@
-import { PropertiesList } from "@/components/PropertiesList";
-import connectDB from "@/config/database";
-import Property from "@/models/Property";
-import React from "react";
+import {PropertiesList} from '@/components/PropertiesList';
+import connectDB from '@/config/database';
+import Property, {type IProperty} from '@/models/Property';
+import React from 'react';
 
 const PropertiesPage = async (): Promise<React.ReactElement> => {
   await connectDB();
 
-  const properties = await Property.find({}).lean();
+  const properties: IProperty[] = await Property.find({});
 
   return (
     <section className="px-4 py-6">

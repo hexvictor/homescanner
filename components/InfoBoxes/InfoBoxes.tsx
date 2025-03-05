@@ -1,5 +1,5 @@
-import { InfoBox } from "@/components/InfoBox";
-import React from "react";
+import {InfoBox} from '@/components/InfoBox';
+import React from 'react';
 
 const InfoBoxes = () => {
   return (
@@ -9,9 +9,9 @@ const InfoBoxes = () => {
         backgroundColor="bg-gray-100"
         textColor=""
         buttonInfo={{
-          text: "Browse Properties",
-          link: "/properties",
-          backgroundColor: "bg-black",
+          text: 'Browse Properties',
+          link: '/properties',
+          backgroundColor: 'bg-black',
         }}
       >
         Find your dream rental property. Bookmark properties and contact owners.
@@ -21,13 +21,12 @@ const InfoBoxes = () => {
         backgroundColor="bg-blue-100"
         textColor=""
         buttonInfo={{
-          text: "Add Properties",
-          link: "/properties/add",
-          backgroundColor: "bg-blue-500",
+          text: 'Add Properties',
+          link: '/properties/add',
+          backgroundColor: 'bg-blue-500',
         }}
       >
-        List your properties and reach potential tenants. Rent as an airbnb or
-        long term.{" "}
+        List your properties and reach potential tenants. Rent as an airbnb or long term.{' '}
       </InfoBox>
     </div>
   );

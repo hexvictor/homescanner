@@ -1,2 +1,3 @@
-import PropertyOverview from "./PropertyOverview";
-export { PropertyOverview };
+import PropertyOverview from './PropertyOverview';
+
+export {PropertyOverview};

@@ -1,9 +1,10 @@
-import React from "react";
-import PropertyRates from "../PropertyRates/PropertyRates";
-import { PropertyDetails } from "../PropertyDetails";
-import { PropertyLocation } from "../PropertyLocation";
+import React from 'react';
+import PropertyRates from '../PropertyRates/PropertyRates';
+import {PropertyDetails} from '../PropertyDetails';
+import {PropertyLocation} from '../PropertyLocation';
+import {type PropertyProps} from '@/types/property';
 
-const PropertyOverview = ({ property }): React.ReactElement => {
+const PropertyOverview = ({property}: PropertyProps): React.ReactElement => {
   return (
     <main>
       <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">

@@ -1,6 +1,6 @@
-import { authSlice, navbarSlice, useDispatch } from "@/lib/redux";
-import Link from "next/link";
-import React from "react";
+import {authSlice, navbarSlice, useDispatch} from '@/lib/redux';
+import Link from 'next/link';
+import React from 'react';
 
 const ProfileMenu = (): JSX.Element => {
   const dispatch = useDispatch();

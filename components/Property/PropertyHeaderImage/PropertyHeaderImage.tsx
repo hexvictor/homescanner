@@ -1,7 +1,11 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
-const PropertyHeaderImage = ({ image }) => {
+interface PropertyHeaderImageProps {
+  image: string | undefined;
+}
+
+const PropertyHeaderImage = ({image = 'a1.jpg'}: PropertyHeaderImageProps) => {
   return (
     <section>
       <div className="container-xl m-auto">
