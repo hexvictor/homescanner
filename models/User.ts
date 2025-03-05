@@ -1,6 +1,19 @@
 import { Schema, model, models } from "mongoose";
+import type { Types, Document } from "mongoose";
 
-const UserSchema = new Schema(
+// Interface para a tipagem do documento User
+export interface IUser extends Document {
+  _id: Types.ObjectId;
+  email: string;
+  username: string;
+  image?: string;
+  bookmarks?: Types.ObjectId[];
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+// Definição do Schema do User
+const UserSchema = new Schema<IUser>(
   {
     email: {
       type: String,

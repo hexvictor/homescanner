@@ -1,11 +1,9 @@
 import React from "react";
 import Hero from "@/components/Hero/Hero";
-import { HomeProperties } from "@/components/layout/HomeProperties";
+import { HomeProperties } from "@/components/HomeProperties";
 import { InfoBoxes } from "@/components/layout/InfoBoxes";
-import connectDB from "@/config/database";
 
 function HomePage(): React.ReactElement {
-  connectDB();
   return (
     <>
       <Hero />

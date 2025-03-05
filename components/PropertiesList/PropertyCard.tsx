@@ -8,7 +8,7 @@ import {
   FaMoneyBill,
   FaMapMarker,
 } from "react-icons/fa";
-import type { PropertyProps } from "./types";
+import { type IProperty } from "@/models/Property";
 
 const PropertyCard = ({
   _id,
@@ -22,7 +22,7 @@ const PropertyCard = ({
   // eslint-disable-next-line @typescript-eslint/naming-convention
   square_feet,
 }: //   location,
-PropertyProps) => {
+IProperty) => {
   const getPropertyRate = (rates: any) => {
     if (rates?.monthly) {
       return `$${rates?.monthly.toLocaleString()}/mo`;
@@ -36,7 +36,7 @@ PropertyProps) => {
   return (
     <div className="rounded-xl shadow-md relative">
       <Image
-        src={`/images/properties/${images[0]}`}
+        src={images ? `/images/properties/${images[0]}` : ""}
         alt=""
         height={0}
         width={0}
@@ -68,18 +68,18 @@ PropertyProps) => {
         </div>
 
         <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
-          {rates.nightly && (
+          {rates?.nightly && (
             <p>
               <FaMoneyBill className="inline mr-2" />
               Nightly
             </p>
           )}
-          {rates.weekly && (
+          {rates?.weekly && (
             <p>
               <FaMoneyBill className="inline mr-2" /> Weekly
             </p>
           )}
-          {rates.monthly && (
+          {rates?.monthly && (
             <p>
               <FaMoneyBill className="inline mr-2" /> Monthly
             </p>
@@ -93,11 +93,11 @@ PropertyProps) => {
             <FaMapMarker className=" inline mr-2 text-orange-700" />
             <span className="text-orange-700">
               {" "}
-              {location.city} {location.state}{" "}
+              {location?.city} {location?.state}{" "}
             </span>
           </div>
           <Link
-            href={`/property/${_id}`}
+            href={`/properties/${_id.toString()}`}
             className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Details
