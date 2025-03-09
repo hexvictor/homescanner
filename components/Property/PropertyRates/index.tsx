@@ -1,3 +1,3 @@
 import PropertyRates from './PropertyRates';
 
-export {PropertyRates};
+export { PropertyRates };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaTimes} from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 type PropertyRatesProps = {
   rates?: {
@@ -13,7 +13,7 @@ type PriceDisplayProps = {
   price: number | undefined;
 };
 
-const PriceDisplay = ({price}: PriceDisplayProps): React.ReactElement => {
+const PriceDisplay = ({ price }: PriceDisplayProps): React.ReactElement => {
   if (price !== undefined) {
     return <div className="text-2xl font-bold text-blue-500">${price.toLocaleString()}</div>;
   }
@@ -24,7 +24,7 @@ const PriceDisplay = ({price}: PriceDisplayProps): React.ReactElement => {
   );
 };
 
-const PropertyRates = ({rates}: PropertyRatesProps): React.ReactElement => {
+const PropertyRates = ({ rates }: PropertyRatesProps): React.ReactElement => {
   return (
     <>
       <h3 className="text-lg font-bold my-6 bg-gray-800 text-white p-2">Rates & Options</h3>

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import logo from '@/assets/images/logo.png';
 
-const Footer = (): JSX.Element => {
+export default function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gray-200 py-4 mt-auto">
@@ -16,6 +16,4 @@ const Footer = (): JSX.Element => {
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

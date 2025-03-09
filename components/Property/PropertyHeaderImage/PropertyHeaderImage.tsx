@@ -5,7 +5,7 @@ interface PropertyHeaderImageProps {
   image: string | undefined;
 }
 
-const PropertyHeaderImage = ({image = 'a1.jpg'}: PropertyHeaderImageProps) => {
+const PropertyHeaderImage = ({ image = 'a1.jpg' }: PropertyHeaderImageProps) => {
   return (
     <section>
       <div className="container-xl m-auto">

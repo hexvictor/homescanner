@@ -1,3 +1,3 @@
 import PropertiesList from './PropertiesList';
 
-export {PropertiesList};
+export { PropertiesList };

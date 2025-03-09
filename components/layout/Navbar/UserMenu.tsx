@@ -3,21 +3,30 @@ import React from 'react';
 import Image from 'next/image';
 import ProfileMenu from './ProfileMenu';
 import profileDefault from '@/assets/images/profile.png';
-import {FaGoogle} from 'react-icons/fa';
-import {authSlice, navbarSlice, selectAuthSuccess, selectProfileMenuState, useDispatch, useSelector} from '@/lib/redux';
+import { FaGoogle } from 'react-icons/fa';
+import { type Session } from 'next-auth';
+import { useNavbarStore } from '@/store/navbarStore';
+import { useShallow } from 'zustand/shallow';
 
-const UserMenu = (): JSX.Element => {
-  const loggedIn = useSelector(selectAuthSuccess);
-  if (loggedIn) {
+type UserMenuProps = {
+  session: Session | null;
+};
+
+const UserMenu = ({ session }: UserMenuProps): React.ReactElement => {
+  if (session) {
     return <UserMenuLoggedIn />;
   } else {
     return <UserMenuLoggedOut />;
   }
 };
 
-const UserMenuLoggedIn = (): JSX.Element => {
-  const dispatch = useDispatch();
-  const profileMenuState = useSelector(selectProfileMenuState);
+const UserMenuLoggedIn = (): React.ReactElement => {
+  const { profileMenuOpen, toggleProfileMenu } = useNavbarStore(
+    useShallow(state => ({
+      profileMenuOpen: state.profileMenuOpen,
+      toggleProfileMenu: state.toggleProfileMenu,
+    }))
+  );
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
       <Link href="/messages" className="relative group">
@@ -55,7 +64,9 @@ const UserMenuLoggedIn = (): JSX.Element => {
             id="user-menu-button"
             aria-expanded="false"
             aria-haspopup="true"
-            onClick={() => dispatch(navbarSlice.actions.toggleProfileMenu())}
+            onClick={() => {
+              toggleProfileMenu();
+            }}
           >
             <span className="absolute -inset-1.5" />
             <span className="sr-only">Open user menu</span>
@@ -64,21 +75,20 @@ const UserMenuLoggedIn = (): JSX.Element => {
         </div>
 
         {/* <!-- Profile dropdown --> */}
-        {profileMenuState && <ProfileMenu />}
+        {profileMenuOpen && <ProfileMenu />}
       </div>
     </div>
   );
 };
 
-const UserMenuLoggedOut = (): JSX.Element => {
-  const dispatch = useDispatch();
+const UserMenuLoggedOut = (): React.ReactElement => {
   return (
     <div className="hidden md:block md:ml-6">
       <div className="flex items-center">
         <button
           type="button"
           className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-          onClick={() => dispatch(authSlice.actions.signIn())}
+          onClick={() => {}}
         >
           <FaGoogle className="text-white mr-2" />
           <span>Login or Register</span>

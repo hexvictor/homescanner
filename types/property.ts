@@ -1,4 +1,4 @@
-import {type IProperty} from '@/models/Property';
+import { type IProperty } from '@/models/Property';
 
 export interface PropertyProps {
   property: IProperty;

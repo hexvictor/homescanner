@@ -1,18 +1,40 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '@/assets/images/logo-white.png';
 import MobileNavbarMenu from './mobile/MobileNavbarMenu';
 import UserMenu from './UserMenu';
-import {usePathname} from 'next/navigation';
-import {navbarSlice, selectAuthSuccess, selectMobileMenuState, useDispatch, useSelector} from '@/lib/redux';
-
+import { usePathname } from 'next/navigation';
+import { type ClientSafeProvider, getProviders, signIn, signOut, useSession } from 'next-auth/react';
+import { useAuthStore } from '@/store/authStore';
+import { useNavbarStore } from '@/store/navbarStore';
+import { useShallow } from 'zustand/shallow';
 function Navbar(): JSX.Element {
-  const dispatch = useDispatch();
-  const mobileMenuState = useSelector(selectMobileMenuState);
-  const loggedIn = useSelector(selectAuthSuccess);
+  const { data: session } = useSession();
+
+  const { mobileMenuOpen, toggleMobileMenu } = useNavbarStore(
+    useShallow(state => ({
+      mobileMenuOpen: state.mobileMenuOpen,
+      toggleMobileMenu: state.toggleMobileMenu,
+    }))
+  );
+  const { authProviders, setProviders } = useAuthStore(
+    useShallow(state => ({
+      authProviders: state.authProviders,
+      setProviders: state.setProviders,
+    }))
+  );
   const pathname = usePathname();
+
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })().catch(error => {
+      console.error('Error setting auth providers:', error);
+    });
+  }, [setProviders]);
 
   return (
     <nav className="bg-blue-700 border-b border-blue-500">
@@ -26,7 +48,9 @@ function Navbar(): JSX.Element {
               className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
-              onClick={() => dispatch(navbarSlice.actions.toggleMobileMenu())}
+              onClick={() => {
+                toggleMobileMenu();
+              }}
             >
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -69,7 +93,7 @@ function Navbar(): JSX.Element {
                 >
                   Properties
                 </Link>
-                {loggedIn && (
+                {session && (
                   <Link
                     href="/properties/add"
                     className={`${
@@ -84,12 +108,12 @@ function Navbar(): JSX.Element {
           </div>
 
           {/* <!-- Right Side Menu --> */}
-          <UserMenu />
+          <UserMenu session={session} />
         </div>
       </div>
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-      {mobileMenuState && <MobileNavbarMenu />}
+      {mobileMenuOpen && <MobileNavbarMenu />}
     </nav>
   );
 }

@@ -1,8 +1,8 @@
-import {type PropertyProps} from '@/types/property';
+import { type PropertyProps } from '@/types/property';
 import React from 'react';
-import {FaBath, FaBed, FaCheck, FaRulerCombined} from 'react-icons/fa';
+import { FaBath, FaBed, FaCheck, FaRulerCombined } from 'react-icons/fa';
 
-const PropertyDetails = ({property}: PropertyProps): React.ReactElement => {
+const PropertyDetails = ({ property }: PropertyProps): React.ReactElement => {
   return (
     <>
       <div className="bg-white p-6 rounded-lg shadow-md mt-6">

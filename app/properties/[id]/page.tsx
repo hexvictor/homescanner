@@ -1,14 +1,32 @@
-import {PropertyOverview} from '@/components/Property/PropertyOverview';
+import { PropertyOverview } from '@/components/Property/PropertyOverview';
 import PropertyHeaderImage from '@/components/Property/PropertyHeaderImage/PropertyHeaderImage';
 import connectDB from '@/config/database';
-import Property, {type IProperty} from '@/models/Property';
+import Property, { type IProperty } from '@/models/Property';
 import Link from 'next/link';
 import React from 'react';
-import {FaArrowLeft} from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
-const PropertyPage = async ({params}: {params: {id: string}}): Promise<React.ReactElement> => {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+const PropertyPage = async ({ params }: Props) => {
+  const { id } = await params;
+  // ✅ Ensure params are available
+  if (!id) {
+    return <div>Property not found</div>; // Prevents undefined errors
+  }
+
   await connectDB();
-  const property: IProperty | null = await Property.findById(params.id);
+
+  let property: IProperty | null = null;
+  try {
+    property = await Property.findById(id).lean<IProperty>();
+  } catch (error) {
+    console.error('Error fetching property:', error);
+    return <div>Failed to load property</div>;
+  }
+
   return (
     <>
       <PropertyHeaderImage image={property?.images?.[0]} />
@@ -24,7 +42,7 @@ const PropertyPage = async ({params}: {params: {id: string}}): Promise<React.Rea
       <section className="bg-blue-50">
         <div className="container m-auto py-10 px-6">
           <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
-            {property ? <PropertyOverview property={property} /> : 'Not found'}
+            {property ? <PropertyOverview property={property} /> : 'Property not found'}
           </div>
         </div>
       </section>

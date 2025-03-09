@@ -1,9 +1,9 @@
 import PropertyCard from '@/components/PropertyCard/PropertyCard';
-import Property, {type IProperty} from '@/models/Property';
+import Property, { type IProperty } from '@/models/Property';
 import React from 'react';
 
 const RecentProperties = async (): Promise<React.ReactElement> => {
-  const recentProperties: IProperty[] = await Property.find({}).sort({createdAt: -1}).limit(3);
+  const recentProperties: IProperty[] = await Property.find({}).sort({ createdAt: -1 }).limit(3).lean<IProperty[]>();
 
   return (
     <div className="container-xl lg:container m-auto px-4 py-6">

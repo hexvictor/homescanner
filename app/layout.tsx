@@ -1,9 +1,9 @@
 import React from 'react';
 import '@/assets/styles/global.css';
-import {type LayoutProps} from '@/types/global';
-import {Providers} from '@/lib/Providers';
-import {Navbar} from '@/components/Navbar';
-import {Footer} from '@/components/Footer';
+import { AuthProvider } from '@/providers/AuthProvider';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/Footer';
+import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
 
 export const metadata = {
   title: 'HomeScanner | Find your next home',
@@ -11,17 +11,23 @@ export const metadata = {
   keywords: 'home, house, property, rent, buy, city, home scanner',
 };
 
-function Layout({children}: LayoutProps): React.ReactElement {
+type Props = {
+  children: React.ReactElement;
+};
+
+function Layout({ children }: Props): React.ReactElement {
   return (
-    <Providers>
+    <AuthProvider>
       <html lang="en" className="min-h-screen">
         <body className="flex-col flex min-h-screen">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ReactQueryProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </ReactQueryProvider>
         </body>
       </html>
-    </Providers>
+    </AuthProvider>
   );
 }
 

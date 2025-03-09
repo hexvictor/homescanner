@@ -1,12 +1,11 @@
-import {authSlice, selectAuthSuccess, useDispatch, useSelector} from '@/lib/redux';
+import { useAuthStore } from '@/store/authStore';
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React from 'react';
-import {FaGoogle} from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 
 const MobileNavbarMenu = () => {
-  const dispatch = useDispatch();
-  const loggedIn = useSelector(selectAuthSuccess);
+  const session = useAuthStore(state => state.session);
   const pathname = usePathname();
   return (
     <div id="mobile-menu">
@@ -27,7 +26,7 @@ const MobileNavbarMenu = () => {
         >
           Properties
         </Link>
-        {loggedIn && (
+        {session && (
           <Link
             href="/properties/add"
             className={`${
@@ -37,11 +36,11 @@ const MobileNavbarMenu = () => {
             Add Property
           </Link>
         )}
-        {!loggedIn && (
+        {!session && (
           <button
             type="button"
             className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4"
-            onClick={() => dispatch(authSlice.actions.signIn())}
+            onClick={() => {}}
           >
             <FaGoogle className="text-white mr-2" />
             <span>Login or Register</span>

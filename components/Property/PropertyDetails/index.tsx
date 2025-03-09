@@ -1,3 +1,3 @@
 import PropertyDetails from './PropertyDetails';
 
-export {PropertyDetails};
+export { PropertyDetails };

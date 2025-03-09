@@ -1,4 +1,4 @@
-import {debug} from 'console';
+import { debug } from 'console';
 import mongoose from 'mongoose';
 
 const connectDB = async () => {

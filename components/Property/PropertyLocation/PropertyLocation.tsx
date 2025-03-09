@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaMapMarker} from 'react-icons/fa';
+import { FaMapMarker } from 'react-icons/fa';
 
 type PropertyLocationProps = {
   location?: {
@@ -10,7 +10,7 @@ type PropertyLocationProps = {
   };
 };
 
-const PropertyLocation = ({location}: PropertyLocationProps): React.ReactElement => {
+const PropertyLocation = ({ location }: PropertyLocationProps): React.ReactElement => {
   return (
     <div className="text-gray-500 mb-4 flex items-center gap-2 justify-center md:justify-start">
       <FaMapMarker className="text-orange-700" />

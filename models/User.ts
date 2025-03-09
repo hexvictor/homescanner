@@ -1,5 +1,5 @@
-import {Schema, model, models} from 'mongoose';
-import type {Types, Document} from 'mongoose';
+import { Schema, model, models } from 'mongoose';
+import type { Types, Document } from 'mongoose';
 
 // Interface para a tipagem do documento User
 export interface IUser extends Document {
@@ -28,7 +28,7 @@ const UserSchema = new Schema<IUser>(
     image: {
       type: String,
     },
-    bookmarks: [{type: Schema.Types.ObjectId, ref: 'Property'}],
+    bookmarks: [{ type: Schema.Types.ObjectId, ref: 'Property' }],
   },
   {
     timestamps: true,

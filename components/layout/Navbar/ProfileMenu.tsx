@@ -1,9 +1,9 @@
-import {authSlice, navbarSlice, useDispatch} from '@/lib/redux';
+import { useNavbarStore } from '@/store/navbarStore';
 import Link from 'next/link';
 import React from 'react';
 
-const ProfileMenu = (): JSX.Element => {
-  const dispatch = useDispatch();
+export default function ProfileMenu(): React.ReactElement {
+  const closeProfileMenu = useNavbarStore(state => state.closeProfileMenu);
   return (
     <div
       id="user-menu"
@@ -38,14 +38,12 @@ const ProfileMenu = (): JSX.Element => {
         tabIndex={-1}
         id="user-menu-item-2"
         onClick={() => {
-          dispatch(authSlice.actions.signOut());
-          dispatch(navbarSlice.actions.closeProfileMenu());
+          // dispatch(authSlice.actions.signOut());
+          closeProfileMenu();
         }}
       >
         Sign Out
       </button>
     </div>
   );
-};
-
-export default ProfileMenu;
+}

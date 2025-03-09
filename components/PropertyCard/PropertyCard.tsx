@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import {FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker} from 'react-icons/fa';
-import {type PropertyProps} from '@/types/property';
+import { FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker } from 'react-icons/fa';
+import { type PropertyProps } from '@/types/property';
 
-const PropertyCard = ({property}: PropertyProps) => {
+const PropertyCard = ({ property }: PropertyProps) => {
   const getPropertyRate = (rates: any) => {
     if (rates?.monthly) {
       return `$${rates?.monthly.toLocaleString()}/mo`;

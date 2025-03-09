@@ -1,5 +1,5 @@
-import {Schema, model, models} from 'mongoose';
-import type {Types, Document} from 'mongoose';
+import { Schema, model, models } from 'mongoose';
+import type { Types, Document } from 'mongoose';
 
 // Interface para a tipagem do documento Property
 export interface IProperty extends Document {
@@ -71,7 +71,7 @@ const PropertySchema = new Schema<IProperty>(
       type: Number,
       required: true,
     },
-    amenities: [{type: String}],
+    amenities: [{ type: String }],
     rates: {
       nightly: Number,
       weekly: Number,
