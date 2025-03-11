@@ -6,7 +6,7 @@ import logo from '@/assets/images/logo-white.png';
 import MobileNavbarMenu from './mobile/MobileNavbarMenu';
 import UserMenu from './UserMenu';
 import { usePathname } from 'next/navigation';
-import { type ClientSafeProvider, getProviders, signIn, signOut, useSession } from 'next-auth/react';
+import { getProviders, useSession } from 'next-auth/react';
 import { useAuthStore } from '@/store/authStore';
 import { useNavbarStore } from '@/store/navbarStore';
 import { useShallow } from 'zustand/shallow';
@@ -19,12 +19,7 @@ function Navbar(): JSX.Element {
       toggleMobileMenu: state.toggleMobileMenu,
     }))
   );
-  const { authProviders, setProviders } = useAuthStore(
-    useShallow(state => ({
-      authProviders: state.authProviders,
-      setProviders: state.setProviders,
-    }))
-  );
+  const setProviders = useAuthStore(state => state.setProviders);
   const pathname = usePathname();
 
   useEffect(() => {

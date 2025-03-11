@@ -37,14 +37,14 @@ export const useAuthStore = create<AuthState & AuthActions>()(
         },
 
         // ✅ Sign in with a provider (default to 'google')
-        login: async (provider = 'google') => {
-          set({ authLoading: true }, false, 'login');
+        signIn: async (provider = 'google') => {
+          set({ authLoading: true }, false, 'signIn');
           try {
             await signIn(provider);
           } catch (error) {
             console.error('Login failed:', error);
           } finally {
-            set({ authLoading: false }, false, 'loginEnd');
+            set({ authLoading: false }, false, 'signInEnd');
           }
         },
 
@@ -82,7 +82,7 @@ export type AuthActions = {
   resetAuthStore: () => void;
   setProviders: (providers: Record<string, ClientSafeProvider> | null) => void;
   fetchProviders: () => Promise<void>;
-  login: (provider?: string) => Promise<void>;
+  signIn: (provider?: string) => Promise<void>;
   logout: () => Promise<void>;
   setSession: (session: any | null) => void;
 };

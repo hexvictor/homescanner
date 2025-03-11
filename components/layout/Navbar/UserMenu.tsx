@@ -3,24 +3,28 @@ import React from 'react';
 import Image from 'next/image';
 import ProfileMenu from './ProfileMenu';
 import profileDefault from '@/assets/images/profile.png';
-import { FaGoogle } from 'react-icons/fa';
 import { type Session } from 'next-auth';
 import { useNavbarStore } from '@/store/navbarStore';
 import { useShallow } from 'zustand/shallow';
+import { ProvidersSignInButtons } from './ProvidersSignInButtons';
+import { useAuthStore } from '@/store/authStore';
+import { useSession } from 'next-auth/react';
 
 type UserMenuProps = {
   session: Session | null;
 };
 
-const UserMenu = ({ session }: UserMenuProps): React.ReactElement => {
+function UserMenu({ session }: UserMenuProps): React.ReactElement {
   if (session) {
     return <UserMenuLoggedIn />;
   } else {
     return <UserMenuLoggedOut />;
   }
-};
+}
 
-const UserMenuLoggedIn = (): React.ReactElement => {
+function UserMenuLoggedIn(): React.ReactElement {
+  const { data: session } = useSession();
+
   const { profileMenuOpen, toggleProfileMenu } = useNavbarStore(
     useShallow(state => ({
       profileMenuOpen: state.profileMenuOpen,
@@ -70,7 +74,13 @@ const UserMenuLoggedIn = (): React.ReactElement => {
           >
             <span className="absolute -inset-1.5" />
             <span className="sr-only">Open user menu</span>
-            <Image className="h-8 w-8 rounded-full" src={profileDefault} alt="" />
+            <Image
+              className="h-8 w-8 rounded-full"
+              width={32}
+              height={32}
+              src={session?.user?.image ?? profileDefault}
+              alt=""
+            />
           </button>
         </div>
 
@@ -79,23 +89,16 @@ const UserMenuLoggedIn = (): React.ReactElement => {
       </div>
     </div>
   );
-};
+}
 
-const UserMenuLoggedOut = (): React.ReactElement => {
+function UserMenuLoggedOut(): React.ReactElement {
   return (
     <div className="hidden md:block md:ml-6">
       <div className="flex items-center">
-        <button
-          type="button"
-          className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-          onClick={() => {}}
-        >
-          <FaGoogle className="text-white mr-2" />
-          <span>Login or Register</span>
-        </button>
+        <ProvidersSignInButtons />
       </div>
     </div>
   );
-};
+}
 
 export default UserMenu;
