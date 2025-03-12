@@ -1,4 +1,5 @@
 import { useNavbarStore } from '@/store/navbarStore';
+import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -38,8 +39,8 @@ export default function ProfileMenu(): React.ReactElement {
         tabIndex={-1}
         id="user-menu-item-2"
         onClick={() => {
-          // dispatch(authSlice.actions.signOut());
           closeProfileMenu();
+          void signOut();
         }}
       >
         Sign Out

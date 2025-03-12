@@ -30,7 +30,6 @@ export const authOptions: AuthOptions = {
 
       // 3. Check if user exists
       const user = await User.findOne({ email: profile?.email }).lean<IUser>();
-      console.log(user);
 
       // 4. If not, create user
       if (!user) {
