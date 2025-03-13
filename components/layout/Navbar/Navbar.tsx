@@ -6,13 +6,17 @@ import logo from '@/assets/images/logo-white.png';
 import MobileNavbarMenu from './mobile/MobileNavbarMenu';
 import UserMenu from './UserMenu';
 import { usePathname } from 'next/navigation';
-import { getProviders, useSession } from 'next-auth/react';
+import { getProviders } from 'next-auth/react';
 import { useAuthStore } from '@/store/authStore';
 import { useNavbarStore } from '@/store/navbarStore';
 import { useShallow } from 'zustand/shallow';
-function Navbar(): JSX.Element {
-  const { data: session } = useSession();
+import { type Session } from 'next-auth';
 
+type Props = {
+  session: Session | null;
+};
+
+function Navbar({ session }: Props): JSX.Element {
   const { mobileMenuOpen, toggleMobileMenu } = useNavbarStore(
     useShallow(state => ({
       mobileMenuOpen: state.mobileMenuOpen,

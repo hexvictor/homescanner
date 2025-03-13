@@ -16,14 +16,13 @@ type UserMenuProps = {
 
 function UserMenu({ session }: UserMenuProps): React.ReactElement {
   if (session) {
-    return <UserMenuLoggedIn />;
+    return <UserMenuLoggedIn session={session} />;
   } else {
     return <UserMenuLoggedOut />;
   }
 }
 
-function UserMenuLoggedIn(): React.ReactElement {
-  const { data: session } = useSession();
+function UserMenuLoggedIn({ session }: UserMenuProps): React.ReactElement {
   const { profileMenuOpen, toggleProfileMenu } = useNavbarStore(
     useShallow(state => ({ profileMenuOpen: state.profileMenuOpen, toggleProfileMenu: state.toggleProfileMenu }))
   );

@@ -4,6 +4,8 @@ import { AuthProvider } from '@/providers/AuthProvider';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/Footer';
 import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/utils/authOptions';
 
 export const metadata = {
   title: 'HomeScanner | Find your next home',
@@ -15,13 +17,14 @@ type Props = {
   children: React.ReactElement;
 };
 
-function Layout({ children }: Props): React.ReactElement {
+async function Layout({ children }: Props): Promise<React.ReactElement> {
+  const session = await getServerSession(authOptions);
   return (
     <AuthProvider>
       <html lang="en" className="min-h-screen">
         <body className="flex-col flex min-h-screen">
           <ReactQueryProvider>
-            <Navbar />
+            <Navbar session={session} />
             <main className="flex-1">{children}</main>
             <Footer />
           </ReactQueryProvider>

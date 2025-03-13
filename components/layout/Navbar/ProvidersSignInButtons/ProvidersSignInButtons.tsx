@@ -2,7 +2,7 @@
 
 import { useAuthStore } from '@/store/authStore';
 import { type BuiltInProviderType } from 'next-auth/providers/index';
-import { useSession, type ClientSafeProvider, type LiteralUnion } from 'next-auth/react';
+import { type ClientSafeProvider, type LiteralUnion } from 'next-auth/react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaGoogle } from 'react-icons/fa';
 
@@ -24,11 +24,10 @@ const providersConfig: ProvidersConfig = {
 };
 
 export default function ProvidersSignInButtons(): React.ReactElement {
-  const session = useAuthStore(state => state.session);
   const authProviders = useAuthStore(state => state.authProviders);
   const signIn = useAuthStore(state => state.signIn);
 
-  if (authProviders && session) {
+  if (authProviders) {
     return (
       <>
         {Object.values(authProviders).map((provider: ClientSafeProvider, index) => {
