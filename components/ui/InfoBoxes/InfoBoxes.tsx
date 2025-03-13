@@ -1,4 +1,4 @@
-import { InfoBox } from '@/components/InfoBox';
+import { InfoBox } from '@/components/ui/InfoBox';
 import React from 'react';
 
 const InfoBoxes = () => {

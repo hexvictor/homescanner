@@ -2,7 +2,7 @@ import React from 'react';
 import '@/assets/styles/global.css';
 import { AuthProvider } from '@/providers/AuthProvider';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/Footer';
+import { Footer } from '@/components/layout/Footer';
 import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/utils/authOptions';
@@ -25,7 +25,7 @@ async function Layout({ children }: Props): Promise<React.ReactElement> {
         <body className="flex-col flex min-h-screen">
           <ReactQueryProvider>
             <Navbar session={session} />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 flex flex-col">{children}</main>
             <Footer />
           </ReactQueryProvider>
         </body>

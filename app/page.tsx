@@ -1,7 +1,7 @@
 import React from 'react';
-import Hero from '@/components/Hero/Hero';
-import { HomeProperties } from '@/components/HomeProperties';
-import { InfoBoxes } from '@/components/InfoBoxes';
+import Hero from '@/components/layout/Hero/Hero';
+import { HomeProperties } from '@/components/properties/HomeProperties';
+import { InfoBoxes } from '@/components/ui/InfoBoxes';
 
 function HomePage(): React.ReactElement {
   return (

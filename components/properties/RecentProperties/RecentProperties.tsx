@@ -1,4 +1,4 @@
-import PropertyCard from '@/components/PropertyCard/PropertyCard';
+import { PropertyCard } from '@/components/ui/PropertyCard';
 import Property, { type IProperty } from '@/models/Property';
 import React from 'react';
 
