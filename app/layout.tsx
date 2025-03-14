@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/utils/authOptions';
+import { ReactScan } from '@/components/ReactScan';
 
 export const metadata = {
   title: 'HomeScanner | Find your next home',
@@ -20,17 +21,18 @@ type Props = {
 async function Layout({ children }: Props): Promise<React.ReactElement> {
   const session = await getServerSession(authOptions);
   return (
-    <AuthProvider>
-      <html lang="en" className="min-h-screen">
-        <body className="flex-col flex min-h-screen">
+    <html lang="en" className="min-h-screen">
+      <body className="flex-col flex min-h-screen">
+        <AuthProvider>
+          <ReactScan />
           <ReactQueryProvider>
             <Navbar session={session} />
             <main className="flex-1 flex flex-col">{children}</main>
             <Footer />
           </ReactQueryProvider>
-        </body>
-      </html>
-    </AuthProvider>
+        </AuthProvider>
+      </body>
+    </html>
   );
 }
 

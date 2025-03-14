@@ -2,7 +2,7 @@
 import React from 'react';
 import { SessionProvider } from 'next-auth/react';
 
-const AuthProvider = ({ children }: { children: React.ReactElement }): React.ReactElement => {
+const AuthProvider = ({ children }: { children: any }): React.ReactElement => {
   return <SessionProvider>{children}</SessionProvider>;
 };
 

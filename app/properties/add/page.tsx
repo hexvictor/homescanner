@@ -12,5 +12,4 @@ function AddPropertyPage(): React.ReactElement {
     </section>
   );
 }
-
 export default AddPropertyPage;
