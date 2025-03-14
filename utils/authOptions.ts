@@ -55,7 +55,7 @@ export const authOptions: AuthOptions = {
       await connectDB();
       // 3. Get user from database
       const user = await User.findOne({ email: session?.user?.email });
-      return { ...session, id: user?._id?.toString() };
+      return { ...session, user: { ...session?.user, id: user?._id?.toString() } };
     },
   },
 };
