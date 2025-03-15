@@ -38,7 +38,11 @@
       "email": "john@gmail.com",
       "phone": "617-555-5555"
     },
-    "images": ["a1.jpg", "a2.jpg", "a3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/hiygxd9zl2hjdtpgv1fx.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/zkcr4kdq8d7kgi0nqouy.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/hiygxd9zl2hjdtpgv1fx.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
@@ -81,7 +85,11 @@
       "email": "jane@gmail.com",
       "phone": "212-555-5555"
     },
-    "images": ["b1.jpg", "b2.jpg", "b3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/zkcr4kdq8d7kgi0nqouy.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-02T00:00:00.000Z",
     "updatedAt": "2024-01-02T00:00:00.000Z"
@@ -126,7 +134,11 @@
       "email": "david@gmail.com",
       "phone": "213-555-5555"
     },
-    "images": ["c1.jpg", "c2.jpg", "c3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/u7egt9jge4hapcoci1im.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-03T00:00:00.000Z",
     "updatedAt": "2024-01-03T00:00:00.000Z"
@@ -154,7 +166,11 @@
       "email": "emily@gmail.com",
       "phone": "512-555-5555"
     },
-    "images": ["d1.jpg", "d2.jpg", "d3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/zkcr4kdq8d7kgi0nqouy.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-04T00:00:00.000Z",
     "updatedAt": "2024-01-04T00:00:00.000Z"
@@ -183,7 +199,11 @@
       "email": "michael@gmail.com",
       "phone": "312-555-5555"
     },
-    "images": ["e1.jpg", "e2.jpg", "e3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/hiygxd9zl2hjdtpgv1fx.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg"
+    ],
     "is_featured": true,
     "createdAt": "2024-01-05T00:00:00.000Z",
     "updatedAt": "2024-01-05T00:00:00.000Z"
@@ -212,7 +232,11 @@
       "email": "sarah@gmail.com",
       "phone": "305-555-5555"
     },
-    "images": ["f1.jpg", "f2.jpg", "f3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/u7egt9jge4hapcoci1im.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg"
+    ],
     "is_featured": true,
     "createdAt": "2024-01-06T00:00:00.000Z",
     "updatedAt": "2024-01-06T00:00:00.000Z"
@@ -241,7 +265,11 @@
       "email": "robert@gmail.com",
       "phone": "303-555-5555"
     },
-    "images": ["g1.jpg", "g2.jpg", "g3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/u7egt9jge4hapcoci1im.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-07T00:00:00.000Z",
     "updatedAt": "2024-01-07T00:00:00.000Z"
@@ -270,7 +298,11 @@
       "email": "jennifer@gmail.com",
       "phone": "970-555-5555"
     },
-    "images": ["h1.jpg", "h2.jpg", "h3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-08T00:00:00.000Z",
     "updatedAt": "2024-01-08T00:00:00.000Z"
@@ -299,7 +331,11 @@
       "email": "lisa@gmail.com",
       "phone": "303-555-5555"
     },
-    "images": ["i1.jpg", "i2.jpg", "i3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/u7egt9jge4hapcoci1im.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/o5rfppcexwqjzvyz680g.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/zkcr4kdq8d7kgi0nqouy.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-09T00:00:00.000Z",
     "updatedAt": "2024-01-09T00:00:00.000Z"
@@ -328,7 +364,11 @@
       "email": "matthew@gmail.com",
       "phone": "215-555-5555"
     },
-    "images": ["j1.jpg", "j2.jpg", "j3.jpg"],
+    "images": [
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/j5yysg7bb4bslg2aitcb.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/u7egt9jge4hapcoci1im.jpg",
+      "https://res.cloudinary.com/hexvictor/image/upload/v1741997022/homescanner/efoyxqqsxng7sa4wo3gg.jpg"
+    ],
     "is_featured": false,
     "createdAt": "2024-01-10T00:00:00.000Z",
     "updatedAt": "2024-01-10T00:00:00.000Z"

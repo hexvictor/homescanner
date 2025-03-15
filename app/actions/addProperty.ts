@@ -1,5 +1,6 @@
 'use server';
 
+import cloudinary from '@/config/cloudinary';
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
 import getSessionUser from '@/utils/getSessionUser';
@@ -10,9 +11,6 @@ export default async function addProperty(formData: FormData) {
   await connectDB();
   const sessionUser = await getSessionUser();
 
-  if (sessionUser?.id) {
-    throw new Error('User ID is required');
-  }
   if (!sessionUser?.id) {
     throw new Error('User ID is required');
   }
@@ -20,10 +18,21 @@ export default async function addProperty(formData: FormData) {
   const { id: userID } = sessionUser;
 
   const amenities = formData.getAll('amenities');
-  const images = formData
-    .getAll('images')
-    .filter(image => image instanceof File && image.name !== '')
-    .map(image => image instanceof File && image.name);
+
+  const imagesFiles = formData.getAll('images').filter(image => image instanceof File && image.name !== '');
+  const images = [];
+
+  for (const imageFile of imagesFiles as File[]) {
+    const imageBuffer = await imageFile.arrayBuffer();
+    const imageArray = Array.from(new Uint8Array(imageBuffer));
+    const imageData = Buffer.from(imageArray);
+
+    const imageBase64 = imageData.toString('base64');
+
+    const result = await cloudinary.uploader.upload(`data:image/png;base64,${imageBase64}`, { folder: 'homescanner' });
+
+    images.push(result.secure_url);
+  }
 
   const propertyData = {
     owner: userID,

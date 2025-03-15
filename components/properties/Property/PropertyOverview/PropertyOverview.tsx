@@ -3,6 +3,7 @@ import PropertyRates from '../PropertyRates/PropertyRates';
 import { PropertyDetails } from '../PropertyDetails';
 import { PropertyLocation } from '../PropertyLocation';
 import { type PropertyProps } from '@/types/property';
+import { PropertyImages } from '../PropertyImages';
 
 const PropertyOverview = ({ property }: PropertyProps): React.ReactElement => {
   return (
@@ -20,6 +21,8 @@ const PropertyOverview = ({ property }: PropertyProps): React.ReactElement => {
       <div className="bg-white p-6 rounded-lg shadow-md mt-6">
         <div id="map"></div>
       </div>
+
+      <PropertyImages images={property.images} />
     </main>
   );
 };
