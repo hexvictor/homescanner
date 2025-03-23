@@ -2,7 +2,7 @@
 import { getServerSession, type Session } from 'next-auth';
 import { authOptions } from './authOptions';
 
-type SessionUser = Session['user'] & {
+export type SessionUser = Session['user'] & {
   id?: string;
 };
 
